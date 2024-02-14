@@ -26,12 +26,7 @@
 }
 
 body{
-  /* background-image: url('./assets/bg-mobile.jpg');
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover; */
-
-  /* como funciona um shorthand:
+  /*  shorthand:
   background: color image repeat position/size; */
   background: var(--background-url) no-repeat top center/cover;
 }
@@ -43,7 +38,6 @@ body *{
 
 #container{
   width: 360px;
-  /* border: 1px solid blue; */
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -52,8 +46,6 @@ body *{
   /* quando o elemento html tem propriedade inline, ele não aceita o "margin:auto". Nesse casp, se aplica "text-align:center"
   Da mesma forma, se o elemento html tiver propriedade block, não se usa o "text-align:center", mas sim o "margin:auto. */
   text-align: center;
-  /* padding: 24px; */
-
 }
 
 #profile img{
