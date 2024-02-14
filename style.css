@@ -1,0 +1,181 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --text-color: white;
+  --background-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light{
+  --text-color: black;
+  /* --background-url: url(./assets/bg-mobile-light.jpg); */
+  --background-url: linear-gradient(165deg, rgba(237,232,232,1) 55%, rgba(221,126,197,1) 84%, rgba(196,126,226,1) 94%);; 
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body{
+  /* background-image: url('./assets/bg-mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; */
+
+  /* como funciona um shorthand:
+  background: color image repeat position/size; */
+  background: var(--background-url) no-repeat top center/cover;
+}
+
+body *{
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+}
+
+#container{
+  width: 360px;
+  /* border: 1px solid blue; */
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#profile{
+  /* quando o elemento html tem propriedade inline, ele não aceita o "margin:auto". Nesse casp, se aplica "text-align:center"
+  Da mesma forma, se o elemento html tiver propriedade block, não se usa o "text-align:center", mas sim o "margin:auto. */
+  text-align: center;
+  /* padding: 24px; */
+
+}
+
+#profile img{
+  width: 112px;
+  border-radius: 100px;
+}
+
+#profile p{
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+#switch{
+  position: relative; 
+  width: 64px;
+  margin: 24px auto;
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+  
+}
+
+.light #switch button{
+  right: 0;
+  left: initial;
+  border: 1px solid var(--stroke-color);
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* LISTA */
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+ul li a{
+  display: flex;
+  /* Aqui, o "align-items" alinha o item considerando um eixo imaginário X (eixo horizontal): */
+  align-items: center;
+  /* Aqui, o "justify-content" alinha o item considerando um eixo imaginário Y (eixo vertical): */
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.5s;
+}
+
+ul li a:hover{
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social_links{
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social_links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+
+}
+
+#social_links a:hover{
+  background: var(--highlight-color);
+}
+
+footer{
+  padding: 24px;
+  justify-content: center;
+  font-size: 14px;
+  display: flex;
+}
+
+footer a{
+  text-decoration: none;
+}
+
+footer a:hover{
+  border-radius: 50%;
+  background: rgba(52, 223, 117, 0.2);
+  font-size: 25px;
+}
+
+footer a{
+  font-size: 20px;
+}
